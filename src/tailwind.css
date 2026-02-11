@@ -2,6 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#root > * {
+  margin: 0;
+  padding: 0;
+}
+
 :root {
   --color-primary01: 252 93 46;
   /* #fc5d2e */
@@ -90,13 +124,6 @@
     display: none;
   }
 
-  /* .scroll-container:hover::-webkit-scrollbar-track {
-    background-color: rgb(var(--color-neutral90));
-  }
-  .scroll-container:hover::-webkit-scrollbar-thumb {
-    background-color: rgb(var(--color-neutral80));
-  } */
-
   .scroll-container::-webkit-scrollbar-track {
     background-color: rgb(var(--color-neutral90));
   }
@@ -105,85 +132,46 @@
   }
 
   overscroll-behavior: none;
-
   overflow-x: hidden;
-
-  input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 1000px white inset;
-    /* 배경색을 흰색으로 설정 */
-    -webkit-text-fill-color: black;
-    /* 글자색을 검은색으로 설정 */
-  }
-
-  .input-fit-size {
-    field-sizing: content;
-  }
 }
-html,
-body {
-  width: 100%;
-  height: 100%;
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px white inset;
+  -webkit-text-fill-color: black;
 }
-#root {
-  width: 100%;
-  height: 100%;
+
+.input-fit-size {
+  field-sizing: content;
 }
 
 .dark {
   --color-primary01: 255 239 234;
-  /* #ffefea */
   --color-primary02: 253 174 150;
-  /* #fdae96 */
   --color-primary03: 252 93 46;
-  /* #fc5d2e */
   --color-neutral0: 255 255 255;
-  /* #ffffff */
   --color-neutral10: 240 242 244;
-  /* #f0f2f4 */
   --color-neutral20: 211 215 222;
-  /* #d3d7de */
   --color-neutral30: 182 188 201;
-  /* #b6bcc9 */
   --color-neutral40: 152 161 179;
-  /* #98a1b3 */
   --color-neutral50: 123 135 157;
-  /* #7b879d */
   --color-neutral60: 98 109 132;
-  /* #626d84 */
   --color-neutral70: 76 85 103;
-  /* #4c5567 */
   --color-neutral80: 54 61 73;
-  /* #363d49 */
   --color-neutral90: 33 36 44;
-  /* #21242c */
   --color-neutral100: 11 12 15;
-  /* #0b0c0f */
   --color-blue: 0 122 255;
-  /* #007aff */
   --color-green: 52 199 89;
-  /* #34c759 */
   --color-yellow: 255 204 0;
-  /* #ffcc00 */
   --color-orange: 255 149 0;
-  /* #ff9500 */
   --color-red: 255 59 48;
-  /* #ff3b30 */
   --color-mint: 0 199 190;
-  /* #00c7be */
   --color-teal: 48 176 199;
-  /* #30b0c7 */
   --color-cyan: 50 173 230;
-  /* #32ade6 */
   --color-indigo: 88 86 214;
-  /* #5856d6 */
   --color-purple: 175 82 222;
-  /* #af52de */
   --color-pink: 255 45 85;
-  /* #ff2d55 */
   --color-brown: 162 132 94;
-  /* #a2845e */
   --color-lightblue: 229 242 255;
-  /* #e5f2ff */
 }
 
 @layer components {
@@ -234,7 +222,7 @@ body {
   }
 
   .headline-small-p {
-    @apply text-[24px] font-medium leading-[39.84px] tracking-[-0.2ㅔㅌ];
+    @apply text-[24px] font-medium leading-[39.84px] tracking-[-0.2px];
   }
 
   /* title */
@@ -304,6 +292,7 @@ body {
     @apply text-[12px] font-normal leading-[19.92px] tracking-[-0.1px];
   }
 }
+
 .gradient-border {
   background: linear-gradient(60deg, #fc5d2e, #ffefea);
   position: relative;
