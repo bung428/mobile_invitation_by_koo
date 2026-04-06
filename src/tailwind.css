@@ -102,7 +102,7 @@ body {
 
   /* 전역 스크롤바 스타일 */
   ::-webkit-scrollbar {
-    width: 16px;
+    width: 0px;
     border-radius: 99px;
     overflow-x: hidden;
   }
